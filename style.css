@@ -1,18 +1,17 @@
-/* Basis-Reset */
 body {
   margin: 0;
   padding: 0;
 }
 
-/* Header / Globale Navigation */
+/* Navbar */
 #mainHeader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: transparent;
-  transition: background-color 0.3s ease;
   z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
 #mainHeader.scrolled {
@@ -29,21 +28,21 @@ body {
   color: white;
 }
 
-/* Hero-Video */
+/* HERO VIDEO */
 .hero-video-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
   margin: 0;
   padding: 0;
-  height: 100vh; /* Bildschirmhöhe */
-  position: relative;
-  overflow: hidden;
 }
 
 .hero-video-container video {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   z-index: -1;
 }
@@ -59,14 +58,6 @@ body {
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* Lokale Navigation */
-.container-fluid.bg-white {
-  margin-top: 0;
-}
-
-
-
 
 
 
