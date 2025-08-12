@@ -1,52 +1,19 @@
-/* Allgemeines Layout */
-body {
+/* Basis-Reset */
+html, body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  background-color: black; /* verhindert weißen Balken */
 }
 
-
-/* Hero-Video */
-.hero-video-container {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
-
-.hero-video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-}
-
-.hero-overlay {
-  position: relative;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  font-size: 2rem;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* Globale Nav */
-/* Anfangszustand: transparent */
+/* Header / Globale Navigation */
 #mainHeader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: transparent;
-  z-index: 1000;
   transition: background-color 0.3s ease;
+  z-index: 1000;
 }
 
 #mainHeader.scrolled {
@@ -62,5 +29,44 @@ body {
 #mainHeader.scrolled h1 {
   color: white;
 }
+
+/* Hero-Video */
+.hero-video-container {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Bildschirmhöhe */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  background-color: black;
+}
+
+.hero-overlay {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Lokale Navigation */
+.container-fluid.bg-white {
+  margin-top: 0;
+}
+
+
 
 
