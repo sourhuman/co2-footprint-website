@@ -28,7 +28,7 @@
 
                 <nav>
                     <ul class="nav">
-                        <li class="nav-item"><a href="home.html" class="nav-link text-white">HOMEPAGE</a></li>
+                        <li class="nav-item"><a href="Index.html" class="nav-link text-white">HOMEPAGE</a></li>
                         <li class="nav-item"><a href="about.html" class="nav-link text-white">ÜBER UNS</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link text-white">KONTAKT</a></li>
                     </ul>
@@ -36,82 +36,107 @@
             </div>
         </header>
 
-        <!-- Hero Video -->
-        <section class="hero-video-container">
-            <video autoplay muted loop playsinline>
-                <source src="hero-video.mp4" type="video/mp4">
-            </video>
-            <div class="hero-overlay">
-                <h1>WIR MACHEN EMISSIONEN SICHTBAR</h1>
-            </div>
-        </section>
+       
 
-        <!-- Lokale-Navigation -->
-        <nav class="container-fluid bg-white py-2 shadow-sm mb-4">
-            <ul class="nav nav-pills flex-column flex-sm-row justify-content-center">
-                <li class="nav-item"><a href="#abschnitt1" class="nav-link">UNSERE ZIELE</a></li>
-                <li class="nav-item"><a href="#abschnitt2" class="nav-link">WAS IST EIN CO2-FOOTPRINT?</a></li>
-                <li class="nav-item"><a href="#abschnitt3" class="nav-link">CO2-FOOTPRINT-TABELLE</a></li>
-            </ul>
-        </nav>
-
-        <!-- Content-Bereich -->
-        <main class="container"> 
-            <section id="abschnitt1" class="mb-5">
-                <h1>UNSERE ZIELE</h1>
-                <p>Wir von CarbonWatch e.V. setzen uns dafür ein, die Klimatransparenz zu fördern.
-                    Unser Ziel ist es, Bürger:innen, Entscheidungsträger:innen und Unternehmen zugängliche Informationen über die CO₂-Emissionen ganzer Länder 
-                    sowie einzelner Unternehmen bereitzustellen – übersichtlich, verständlich und faktenbasiert.
-                </p>
-                <p><b>Wir glauben: Nur was messbar ist, kann verbessert werden.</b></p>
-                <p>Unsere Plattform bietet:</p>
-                <ul>
-                    <li><a>Öffentliche CO₂-Fußabdruck-Tabellen von Ländern und Unternehmen</a></li>
-                    <li><a>Quellenbasierte Datenaufbereitung</a></li>
-                    <li><a>Werkzeuge für den Vergleich und die Entwicklung von Reduktionsstrategien</a></li>
-                </ul>
-
-            </section>
-
-            <section id="abschnitt2" class="mb-5">
-                <h2>WAS IST EIN CO2-FOOTPRINT?</h2>
-                <p>Der CO₂-Fußabdruck misst die gesamte Menge an Kohlendioxid-Emissionen (CO₂), die direkt oder indirekt durch Aktivitäten entstehen – bei Privatpersonen, Unternehmen oder Staaten.</p>
-                <p>Beispiele:</p>
-                <ul>
-                    <li><a>Ein Land verursacht CO₂ durch Stromerzeugung, Verkehr, Landwirtschaft etc.</a></li>
-                    <li><a>Ein Unternehmen verursacht CO₂ durch Produktion, Logistik, Geschäftsreisen etc.</a></li>
-                </ul>
-                <p>CO₂ wird in Tonnen gemessen. Eine Tonne CO₂ entspricht z. B. einer Autofahrt von ca. 4.700 km mit einem Mittelklasse-Benziner.</p>
-            </section>
-
-            <section id="abschnitt3" class="mb-5">
-                <h2>CO2-FOOTPRINT-TABELLE</h2>
-                
-                <div class="table-responsive">
-                    <table id="co2Table" class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Land</th>
-                                <th>Unternehmen</th>
-                                <th>CO2-Emissionen (t)</th>
-                            </tr>
-                        </thead>
-                    </table>
+            <!-- Hero Video -->
+            <section class="hero-video-container">
+                <video autoplay muted loop playsinline>
+                    <source src="hero-video.mp4" type="video/mp4">
+                </video>
+                <div class="hero-overlay">
+                    <h1>WIR MACHEN EMISSIONEN SICHTBAR</h1>
                 </div>
             </section>
-            <p>(Alle Daten sind öffentlich zugänglich und werden jährlich aktualisiert.)</p>
-        </main>
 
-        <!-- Footer mit rechtlichen Hinweisen -->
-        <footer class="container mt-5 pt-3 border-top text-center">
-            <a>© 2025 CarbonWatch e.V.</a> 
-            <nav>
-                <ul class="nav justify-content-center">
-                    <li class="nav-item"><a href="privacy.html" class="nav-link">Datenschutz</a></li>
-                    <li class="nav-item"><a href="imprint.html" class="nav-link">Impressum</a></li>
-                </ul>
+            <!-- Lokale Navigation -->
+            <nav class="navbar navbar-expand-md navbar-dark bg-black sticky-top local-nav">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#localNav" aria-controls="localNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-center" id="localNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#abschnitt1">UNSERE ZIELE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#abschnitt2">WAS IST EIN CO2-FOOTPRINT?</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#abschnitt3">CO2-FOOTPRINT-TABELLE</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </nav>
-        </footer>
+
+
+            <!-- Content Container -->
+            <section id="abschnitt1" class="content-section d-flex align-items-center bg-black">
+                <div class="container py-5 text-white">
+                    <h1>UNSERE ZIELE</h1>
+                    <p>Wir von CarbonWatch e.V. setzen uns dafür ein, die Klimatransparenz zu fördern.
+                        Unser Ziel ist es, Bürger:innen, Entscheidungsträger:innen und Unternehmen zugängliche Informationen über die CO₂-Emissionen ganzer Länder 
+                        sowie einzelner Unternehmen bereitzustellen – übersichtlich, verständlich und faktenbasiert.
+                    </p>
+                    <p><b>Wir glauben: Nur was messbar ist, kann verbessert werden.</b></p>
+                    <p>Unsere Plattform bietet:</p>
+                    <ul>
+                        <li><a>Öffentliche CO₂-Fußabdruck-Tabellen von Ländern und Unternehmen</a></li>
+                        <li><a>Quellenbasierte Datenaufbereitung</a></li>
+                        <li><a>Werkzeuge für den Vergleich und die Entwicklung von Reduktionsstrategien</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="abschnitt2" class="content-section d-flex align-items-center bg-black" style="background-image: url('bildsektion2.jpg');">
+                <div class="container py-5">
+                    <div class="p-5 bg-white rounded shadow">
+                        <h1>WAS IST EIN CO2-FOOTPRINT?</h1>
+                        <p></p>
+                        <p>Der CO₂-Fußabdruck misst die gesamte Menge an Kohlendioxid-Emissionen (CO₂), die direkt oder indirekt durch Aktivitäten entstehen – bei Privatpersonen, Unternehmen oder Staaten.</p>
+                        <p>Beispiele:</p>
+                        <ul>
+                            <li><a>Ein Land verursacht CO₂ durch Stromerzeugung, Verkehr, Landwirtschaft etc.</a></li>
+                            <li><a>Ein Unternehmen verursacht CO₂ durch Produktion, Logistik, Geschäftsreisen etc.</a></li>
+                        </ul>
+                        <p>CO₂ wird in Tonnen gemessen. Eine Tonne CO₂ entspricht z. B. einer Autofahrt von ca. 4.700 km mit einem Mittelklasse-Benziner.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="abschnitt3" class="content-section d-flex align-items-center bg-black" style="background-image: url('bildsektion3.jpg');">
+                <div class="container py-5 text-white">
+                    <h2>CO2-FOOTPRINT-TABELLE</h2>
+                    
+                    <div class="table-responsive">
+                        <table id="co2Table" class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Land</th>
+                                    <th>Unternehmen</th>
+                                    <th>CO2-Emissionen (t)</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <p>(Alle Daten sind öffentlich zugänglich und werden jährlich aktualisiert.)</p>
+                </div>
+            </section>
+
+            <!-- Footer mit rechtlichen Hinweisen -->
+            <footer class="site-footer text-center text-white bg-black">
+                    <span>© 2025 CarbonWatch e.V.</span> 
+                    <nav>
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item"><a href="privacy.html" class="nav-link text-white">Datenschutz</a></li>
+                            <li class="nav-item"><a href="imprint.html" class="nav-link text-white">Impressum</a></li>
+                        </ul>
+                    </nav>
+            </footer>
+
+        
 
         
         <!-- Bootstrap JS -->
@@ -129,13 +154,15 @@
         <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script>
 
         <!-- Eigene JavaScripte einbinden -->
-        <script src="menu.js"></script>
         <script src="co2table.js"></script>
         <script src="herovideoscroll.js"></script>
+        <script src="menu.js"></script>
 
     </body>
     
 </html>
+
+
 
 
 
