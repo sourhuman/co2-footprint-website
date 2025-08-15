@@ -19,8 +19,7 @@
       "Land": "USA",
       "Unternehmen": "OilMax",
       "CO2-Emissionen (t)": 35000
-    }
-
+    },
     {
       "Land": "Deutschland",
       "Unternehmen": "AutoCorp",
@@ -60,7 +59,7 @@
       "Land": "USA",
       "Unternehmen": "OilMax",
       "CO2-Emissionen (t)": 35000
-    }
+    },
     {
       "Land": "Deutschland",
       "Unternehmen": "AutoCorp",
@@ -83,4 +82,5 @@
     }
   ]
 }
+
 
