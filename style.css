@@ -1,3 +1,13 @@
+/* ===== Reset & Grundlagen ===== */
+* { box-sizing: border-box; }
+
+:root {
+  --clr-bg: #000;         /* Haupt-Hintergrund */
+  --clr-fg: #fff;         /* Haupt-Textfarbe */
+  --clr-accent: #013220;  /* Akzent (Navi-Active) */
+  --header-h: 110px;      /* Fallback; kann per JS angepasst werden */
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -5,58 +15,48 @@ html, body {
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+  background: var(--clr-bg);
+  color: var(--clr-fg);
 }
 
-/* ====== Globale Navigation ====== */
+/* --- Snap global aus, wenn <html> die Klasse .no-snap trägt --- */
+html.no-snap,
+html.no-snap body {
+  scroll-snap-type: none !important;
+}
+
+/* ===== Globaler Header ===== */
 #mainHeader {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  inset: 0 0 auto 0;
   background-color: transparent;
   z-index: 1000;
-  transition: background-color 0.3s ease;
+  transition: background-color .3s ease;
 }
-
-#mainHeader.scrolled {
-  background-color: #000000; /* Grün oder deine Wunschfarbe */
-}
-
+#mainHeader.scrolled { background-color: var(--clr-bg); }
 #mainHeader .nav-link,
-#mainHeader h1 {
-  color: rgb(255, 255, 255);
-}
+#mainHeader .h1 { color: var(--clr-fg); }
 
-/* Lokale Navigation direkt unter globaler Navbar */
+/* ===== Lokale Navigation ===== */
 .local-nav {
   position: sticky;
-  top: var(--header-h, 110px); /* wird per JS gesetzt */
+  top: var(--header-h);
   z-index: 999;
-  background-color: #000;
+  background-color: var(--clr-bg);
 }
+.local-nav .nav-link { padding: .5rem 1rem; }
+.local-nav .nav-link.active { background-color: var(--clr-accent); }
 
-.local-nav .nav-link {
-  padding: 0.5rem 1rem;
-}
-
-
-.local-nav .nav-link.active {
-  background-color: #013220;
-}
-
-.dataTable {
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
+/* ===== DataTable ===== */
+.dataTable { background-color: rgba(255, 255, 255, .5); }
 .dataTable th,
-.dataTable td {
-  background-color: rgba(255, 255, 255, 0.315) !important;
-}
+.dataTable td { background-color: rgba(255, 255, 255, .315) !important; }
 
-/* ====== Hero Video ====== */
+/* ===== Hero Video ===== */
 .hero-video-container {
   position: relative;
   height: 100vh;
+  isolation: isolate;
   overflow: hidden;
   scroll-snap-align: start;
 }
@@ -68,64 +68,62 @@ html, body {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: 0;
 }
 
 .hero-overlay {
   position: relative;
   height: 100%;
   display: flex;
+  z-index: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: rgb(255, 255, 255);
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.4);
+  padding-top: var(--header-h);
 }
 
-/* ====== Abschnitte ====== */ 
-.content-section { 
-  height: 100vh; /* Vollbildhöhe */ 
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  display: flex; 
-  align-items: center; /* Zentriert den Textkasten vertikal */ 
-  scroll-snap-align: start; 
-} 
+/* ===== Abschnitte ===== */
+.content-section {
+  height: 100vh;               /* Vollbildhöhe */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;          /* vertikal zentriert */
+  scroll-snap-align: start;
+}
+.section-bg-2 { background-image: url('bildsektion2.jpg'); }
+.section-bg-3 { background-image: url('bildsektion3.jpg'); }
 
-.shadow { 
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
-} 
+.shadow { box-shadow: 0 4px 20px rgba(0, 0, 0, .2); }
 
-/* Footer-Design */ 
-/* Footer ist nur eine kleine Leiste, kein Snap */ 
-.site-footer { 
-  scroll-snap-align: none; /* optional: damit er stets über Bild sichtbar bleibt */ 
-  position: relative; 
-  z-index: 1; 
+/* --- Abschnitt 3: nicht 100vh erzwingen, normal scrollen --- */
+#abschnitt3.content-section {
+  height: auto;         /* darf so hoch sein wie der Inhalt */
+  min-height: 100vh;    /* Start weiterhin vollflächig */
+  align-items: flex-start;
 }
 
-/* ====== Responsive Anpassungen ====== */
+#abschnitt3 .container { padding-top: 2rem; }
+
+
+/* ===== Footer ===== */
+.site-footer {
+  scroll-snap-align: none;      /* Footer snapt nicht */
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
-  html, body {
-    scroll-snap-type: none !important;
-  }
-
-  #mainHeader h1 {
-    font-size: 1.2rem;
-  }
-
-  .hero-overlay h1 {
-    font-size: 1.5rem;
-    padding: 0 1rem;
-  }
+  html, body { scroll-snap-type: none !important; }
+  #mainHeader .h1 { font-size: 1.2rem; }
+  .hero-overlay h1 { font-size: 1.5rem; padding: 0 1rem; }
 }
 
 @media (min-width: 769px) {
-  html {
-    scroll-padding-top: var(--header-h, 110px);
-  }
+  html { scroll-padding-top: var(--header-h); }
 }
-
-
