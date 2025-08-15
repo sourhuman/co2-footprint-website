@@ -1,9 +1,13 @@
-body {
+html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
-/* Navbar */
+/* ====== Globale Navigation ====== */
 #mainHeader {
   position: fixed;
   top: 0;
@@ -15,26 +19,46 @@ body {
 }
 
 #mainHeader.scrolled {
-  background-color: #013220;
+  background-color: #000000; /* Grün oder deine Wunschfarbe */
 }
 
 #mainHeader .nav-link,
 #mainHeader h1 {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
-#mainHeader.scrolled .nav-link,
-#mainHeader.scrolled h1 {
-  color: white;
+/* Lokale Navigation direkt unter globaler Navbar */
+.local-nav {
+  position: sticky;
+  top: var(--header-h, 110px); /* wird per JS gesetzt */
+  z-index: 999;
+  background-color: #000;
 }
 
-/* HERO VIDEO */
+.local-nav .nav-link {
+  padding: 0.5rem 1rem;
+}
+
+
+.local-nav .nav-link.active {
+  background-color: #013220;
+}
+
+.dataTable {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dataTable th,
+.dataTable td {
+  background-color: rgba(255, 255, 255, 0.315) !important;
+}
+
+/* ====== Hero Video ====== */
 .hero-video-container {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
+  scroll-snap-align: start;
 }
 
 .hero-video-container video {
@@ -54,9 +78,54 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* ====== Abschnitte ====== */ 
+.content-section { 
+  height: 100vh; /* Vollbildhöhe */ 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  display: flex; 
+  align-items: center; /* Zentriert den Textkasten vertikal */ 
+  scroll-snap-align: start; 
+} 
+
+.shadow { 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
+} 
+
+/* Footer-Design */ 
+/* Footer ist nur eine kleine Leiste, kein Snap */ 
+.site-footer { 
+  scroll-snap-align: none; /* optional: damit er stets über Bild sichtbar bleibt */ 
+  position: relative; 
+  z-index: 1; 
+}
+
+/* ====== Responsive Anpassungen ====== */
+@media (max-width: 768px) {
+  html, body {
+    scroll-snap-type: none !important;
+  }
+
+  #mainHeader h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  html {
+    scroll-padding-top: var(--header-h, 110px);
+  }
 }
 
 
